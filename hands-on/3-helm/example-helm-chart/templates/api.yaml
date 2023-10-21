@@ -15,6 +15,13 @@ spec:
       containers:
       - name: python
         image: registry.srcmesh.dev/workshop/user-18:0.0.1
+        resources: 
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 200m
+              memory: 200Mi
         env:
         - name: REDIS_HOST
           value: redis-svc
