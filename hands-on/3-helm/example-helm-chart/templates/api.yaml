@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python
+  name: {{ .Values.api.name }}
 spec:
   replicas: 1
   selector:
@@ -31,7 +31,7 @@ metadata:
   name: python-svc
 spec:
   selector:
-    app: python
+    app: {{ .Values.api.name }}
   ports:
   - port: 5000
     targetPort: 5000
