@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: sample-app-hpa
+  name: nginx
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: python
+    name: nginx
   minReplicas: 1
   maxReplicas: 3
   metrics:
